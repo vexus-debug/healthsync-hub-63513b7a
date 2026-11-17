@@ -137,7 +137,7 @@ const Index = () => {
       />
       {/* 1. HERO — editorial quiet-luxury split */}
       <section className="relative bg-background">
-        <div className="container pt-24 pb-10 md:pt-32 lg:pt-36">
+        <div className="container pt-6 pb-10 md:pt-12 lg:pt-14">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
             <div className="lg:col-span-7 flex flex-col justify-center space-y-8 animate-fade-up">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
@@ -216,31 +216,31 @@ const Index = () => {
       </section>
 
       {/* 2. HOW IT WORKS — clinical process */}
-      <section className="relative py-20 md:py-28 bg-background border-y border-border/60">
+      <section className="relative py-20 md:py-28 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left column: section intro */}
             <Reveal variant="right" className="lg:col-span-4 lg:sticky lg:top-28 self-start space-y-6">
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-primary font-semibold">
-                <span className="h-px w-8 bg-primary" />
+              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-primary-foreground/80 font-semibold">
+                <span className="h-px w-8 bg-primary-foreground/60" />
                 The Process
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight">
                 A standardised pathway from request to verified report.
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-primary-foreground/75 leading-relaxed">
                 Every sample at Green Medical Diagnostics follows a documented, ISO-aligned workflow — handled by qualified medical scientists and reviewed by consultant pathologists before release.
               </p>
               <div className="flex flex-wrap items-center gap-2 pt-2">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary-soft text-primary text-xs font-semibold">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-xs font-semibold">
                   <BadgeCheck className="h-3.5 w-3.5" /> Quality assured
                 </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs font-semibold">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-xs font-semibold">
                   <ShieldCheck className="h-3.5 w-3.5" /> Confidential
                 </span>
               </div>
               <div className="pt-4">
-                <Button asChild variant="hero" size="lg">
+                <Button asChild size="lg" className="bg-background text-primary hover:bg-background/90">
                   <Link to="/book">Begin your test request <ArrowRight className="h-4 w-4" /></Link>
                 </Button>
               </div>
@@ -248,14 +248,14 @@ const Index = () => {
 
             {/* Right column: numbered process list */}
             <ol className="lg:col-span-8 relative">
-              <div className="absolute left-[27px] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
+              <div className="absolute left-[27px] top-2 bottom-2 w-px bg-primary-foreground/25" aria-hidden="true" />
               {steps.map((s, i) => (
-                <Reveal as="li" key={s.n} variant="left" delay={i * 90} className="relative group pl-20 pr-2 py-6 md:py-7 border-b border-border/60 last:border-b-0 block">
+                <Reveal as="li" key={s.n} variant="left" delay={i * 90} className="relative group pl-20 pr-2 py-6 md:py-7 border-b border-primary-foreground/15 last:border-b-0 block">
                   {/* Step number marker */}
                   <div className="absolute left-0 top-6 md:top-7 flex flex-col items-center">
-                    <div className="relative h-14 w-14 rounded-full bg-background border border-border grid place-items-center group-hover:border-primary transition-smooth">
-                      <s.icon className="h-5 w-5 text-primary" />
-                      <span className="absolute -top-1 -right-1 h-5 min-w-5 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold grid place-items-center font-mono">
+                    <div className="relative h-14 w-14 rounded-full bg-primary-foreground/10 border border-primary-foreground/30 grid place-items-center group-hover:border-primary-foreground transition-smooth">
+                      <s.icon className="h-5 w-5 text-primary-foreground" />
+                      <span className="absolute -top-1 -right-1 h-5 min-w-5 px-1 rounded-full bg-background text-primary text-[10px] font-bold grid place-items-center font-mono">
                         {s.n}
                       </span>
                     </div>
@@ -263,17 +263,17 @@ const Index = () => {
 
                   <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-6">
                     <div className="flex-1">
-                      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground/75 mb-1.5">
                         Step {s.n} {i < steps.length - 1 && "→"}
                       </p>
-                      <h3 className="font-display font-bold text-lg md:text-xl text-foreground">
+                      <h3 className="font-display font-bold text-lg md:text-xl text-primary-foreground">
                         {s.title}
                       </h3>
-                      <p className="mt-2 text-sm md:text-[15px] text-muted-foreground leading-relaxed max-w-xl">
+                      <p className="mt-2 text-sm md:text-[15px] text-primary-foreground/75 leading-relaxed max-w-xl">
                         {s.desc}
                       </p>
                     </div>
-                    <div className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground text-[11px] font-mono font-semibold whitespace-nowrap self-start">
+                    <div className="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-[11px] font-mono font-semibold whitespace-nowrap self-start">
                       <Clock className="h-3 w-3" />
                       {s.meta}
                     </div>
