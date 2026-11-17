@@ -135,75 +135,80 @@ const Index = () => {
         description="MLSCN-licensed medical laboratory in Elioprawo Road, Port Harcourt offering confidential lab tests, consultations, pharmacy and home sample collection. Your Health. Your Privacy. Your Choice."
         keywords="medical laboratory Port Harcourt, lab tests Rivers State, confidential lab Nigeria, blood test Port Harcourt, home sample collection, Green Medical Diagnostics"
       />
-      {/* 1. HERO — clinical, full-bleed, calm */}
-      <section className="relative isolate overflow-hidden bg-background">
-        {/* Background image with deep clinical overlay */}
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={heroImg}
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-primary/85" />
-        </div>
+      {/* 1. HERO — editorial quiet-luxury split */}
+      <section className="relative bg-background">
+        <div className="container pt-24 pb-10 md:pt-32 lg:pt-36">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+            <div className="lg:col-span-7 flex flex-col justify-center space-y-8 animate-fade-up">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                <span className="inline-flex items-center gap-2 text-primary">
+                  <BadgeCheck className="h-3.5 w-3.5" /> Licensed Laboratory
+                </span>
+                <span className="h-px w-6 bg-border" />
+                <span>Confidential Care</span>
+              </div>
 
-        <div className="container relative pt-28 pb-20 md:pt-36 md:pb-28 lg:pt-44 lg:pb-36 text-primary-foreground">
-          <div className="max-w-3xl space-y-7 animate-fade-up">
-            <div className="flex flex-wrap items-center gap-3 text-xs">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 backdrop-blur border border-white/20 font-medium uppercase tracking-[0.18em]">
-                <BadgeCheck className="h-3.5 w-3.5" /> Licensed Medical Laboratory
-              </span>
-              <span className="inline-flex items-center gap-2 text-primary-foreground/85">
-                <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
-                Open today · Walk-ins welcome
-              </span>
+              <h1 className="font-display text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground">
+                Where clinical precision
+                <br className="hidden sm:block" /> meets{" "}
+                <span className="italic font-light text-primary">quiet dignity.</span>
+              </h1>
+
+              <p className="max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
+                A private medical laboratory in Port Harcourt for accurate, unhurried and confidential care — verified blood tests, consultations and home sample collection.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Button asChild size="lg" className="rounded-full px-7 font-medium">
+                  <Link to="/book">Book a private appointment</Link>
+                </Button>
+                <a
+                  href={buildWhatsAppLink("Hello Green Medical, I'd like to request home sample collection.")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-0.5 hover:border-primary hover:text-primary transition-colors"
+                >
+                  Request home pickup
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" /> Walk-ins welcome today
+                </span>
+                <a href={`tel:${SITE.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 hover:text-foreground">
+                  <Phone className="h-3.5 w-3.5" /> {SITE.phones[0]}
+                </a>
+              </div>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-              Diagnostics you can <span className="italic font-medium text-primary-glow">trust</span>,
-              <br className="hidden sm:block" /> care that respects your privacy.
-            </h1>
-
-            <p className="text-base md:text-lg text-primary-foreground/85 max-w-2xl leading-relaxed">
-              Green Medical Diagnostics is a full-service medical laboratory in Port Harcourt — delivering accurate results, qualified clinicians, and complete confidentiality at every step.
-            </p>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Button asChild size="lg" className="bg-background text-primary hover:bg-background/90 font-semibold">
-                <Link to="/book">Book a Test <ArrowRight className="h-4 w-4" /></Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="bg-transparent border-white/40 text-primary-foreground hover:bg-background/10 hover:text-primary-foreground">
-                <Link to="/services">View Test Catalogue</Link>
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-x-7 gap-y-3 pt-4 text-sm text-primary-foreground/85">
-              <a href={`tel:${SITE.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 hover:text-primary-foreground">
-                <Phone className="h-4 w-4" /> {SITE.phones[0]}
-              </a>
-              <span className="h-4 w-px bg-white/20 hidden sm:block" />
-              <a href={buildWhatsAppLink("Hello Green Medical, I'd like to book a test.")} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary-foreground">
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
-              <span className="h-4 w-px bg-white/20 hidden sm:block" />
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Elioprawo Road, Port Harcourt
-              </span>
-            </div>
+            <figure className="lg:col-span-5 animate-fade-in">
+              <div className="relative overflow-hidden rounded-2xl border border-border/60 aspect-[4/5]">
+                <img src={consultImg} alt="Clinician reviewing a patient's results in a private consultation" className="h-full w-full object-cover" />
+                <div className="absolute left-4 bottom-4 right-4 flex items-end justify-between gap-3">
+                  <div className="rounded-lg bg-background/90 backdrop-blur px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground">
+                    <p className="text-muted-foreground">Ref · GMD-PH</p>
+                    <p className="mt-0.5 inline-flex items-center gap-1"><MapPin className="h-3 w-3" /> Elioprawo Rd, PH</p>
+                  </div>
+                </div>
+              </div>
+              <figcaption className="mt-4 font-display italic text-sm text-muted-foreground">
+                “Every sample handled with a private, barcoded chain of custody.”
+              </figcaption>
+            </figure>
           </div>
 
-          {/* Trust stat strip */}
-          <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/15 backdrop-blur border border-white/15">
+          <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-3 border-y border-border">
             {[
-              { k: "200+", v: "Tests offered" },
-              { k: "15+ yrs", v: "Clinical experience" },
-              { k: "24 hr", v: "Avg. turnaround" },
-              { k: "100%", v: "Confidential" },
-            ].map((s) => (
-              <div key={s.v} className="bg-primary/40 backdrop-blur p-5 md:p-6">
-                <p className="font-display text-2xl md:text-3xl font-bold tracking-tight">{s.k}</p>
-                <p className="text-xs md:text-sm text-primary-foreground/80 mt-1">{s.v}</p>
+              { n: "01", k: "200+", v: "Diagnostic tests" },
+              { n: "02", k: "24 hr", v: "Average turnaround" },
+              { n: "03", k: "100%", v: "Confidential reports" },
+            ].map((s, i) => (
+              <div key={s.n} className={`flex items-baseline gap-4 py-5 sm:px-6 ${i > 0 ? "border-t sm:border-t-0 sm:border-l border-border" : ""}`}>
+                <span className="font-mono text-[11px] text-muted-foreground">{s.n}</span>
+                <span className="font-display text-2xl font-semibold text-foreground">{s.k}</span>
+                <span className="text-sm text-muted-foreground">{s.v}</span>
               </div>
             ))}
           </div>
