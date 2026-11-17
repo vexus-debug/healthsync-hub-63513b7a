@@ -199,16 +199,16 @@ const Index = () => {
             </figure>
           </div>
 
-          <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-3 border-y border-border">
+          <div className="mt-14 md:mt-20 grid grid-cols-3 border-y border-border">
             {[
               { n: "01", k: "200+", v: "Diagnostic tests" },
               { n: "02", k: "24 hr", v: "Average turnaround" },
               { n: "03", k: "100%", v: "Confidential reports" },
             ].map((s, i) => (
-              <div key={s.n} className={`flex items-baseline gap-4 py-5 sm:px-6 ${i > 0 ? "border-t sm:border-t-0 sm:border-l border-border" : ""}`}>
+              <div key={s.n} className={`flex min-w-0 flex-col gap-1 px-2 py-4 sm:flex-row sm:items-baseline sm:gap-4 sm:px-6 sm:py-5 ${i > 0 ? "border-l border-border" : ""}`}>
                 <span className="font-mono text-[11px] text-muted-foreground">{s.n}</span>
-                <span className="font-display text-2xl font-semibold text-foreground">{s.k}</span>
-                <span className="text-sm text-muted-foreground">{s.v}</span>
+                <span className="font-display text-xl sm:text-2xl font-semibold text-foreground">{s.k}</span>
+                <span className="text-xs sm:text-sm text-muted-foreground leading-tight">{s.v}</span>
               </div>
             ))}
           </div>
